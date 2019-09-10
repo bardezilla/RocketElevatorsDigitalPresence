@@ -28,6 +28,7 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/color_scheme/yellow.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		
 	</head>
 
 	<style>
@@ -199,21 +200,21 @@
 
 
 				 <!--Submission Form -->
-	<form style="text-align: center">		 
+	<form  name= myForm style="text-align: center">		 
 		<h1>Submission Form</h1>
 			
 			<hr>
 
-			<h4>Choose your service</h4>
+			<h4>Choose your building type</h4>
 			<div>
 	<!--		<input type="text " name="service1" placeholder="type your service" >   -->
 
-				<select name="setService" id="setService" aria-placeholder="Service">
-
-					<option value="Residential">RESIDENTIAL</option>
-					<option value="Commercial">COMMERCIAL</option>
-					<option value="Corporate">CORPORATE</option>
-					<option value='Hybrid'>HYBRID</option>
+				<select name="setBuilding" id="setBuilding" onchange="on_change()">
+					<option selected value="0"> Building Type...</option>
+					<option value="1">RESIDENTIAL</option>
+					<option value="2">COMMERCIAL</option>
+					<option value="3">CORPORATE</option>
+					<option value='4'>HYBRID</option>
 			
 				</select>	
 				
@@ -221,13 +222,44 @@
 
 				<h4>Choose your option</h4>
 			<div>
-				Standard <input type="radio" name='service1' value="standard"><br>
+				Standard <input type="radio"  name='service1' value="standard"><br>
 				Premium <input type="radio" name='service1' value="premium"><br>
 				Excelium <input type="radio" name='service1' value="excelium">
 			</div>
 			
 				<hr>
+				<h4>Enter the number of:</h4>
+		
+			<div id="residential">
+				<input id=numAppartment required type="number" min="0" placeholder="appartment"><br>
+				<input  id=numFloor required type="number" min="0" placeholder="floor"  ><br>
+				<input  id=numBasement required type="number" min="0" placeholder="basement"  ><br>
+			</div>
+			<div id="commercial">
+				<input  id=numBasement required type="number" min="0" placeholder="basement"  ><br>
+				<input  id=numFloor required type="number" min="0" placeholder="floor"  ><br>
+				<input  id=numStore required type="number" min="0" placeholder='tenant store'  ><br>
+				<input id=numParking required type="number" min="0" placeholder="parking"  ><br>
+				<input id=numShaft required type="number" min="0" placeholder="elevator shaft"  ><br>
+			</div>
+			<div id="corporate">
+				<input  id=numFloor required type="number" min="0" placeholder="floor"  ><br>
+				<input id=numParking required type="number" min="0" placeholder="parking"  ><br>
+				<input id=numBusiness required type="number" min="0" placeholder="tenant business"  ><br>
+				<input id=numOccupant required type="number" min="0" placeholder="max occupant per floor"><br> 
+				<input  id=numBasement required type="number" min="0" placeholder="basement"  ><br>
+			</div>
+			<div id= 'hybrid'>
+				<input id=numHours required type="number" min="0" placeholder="business hours"><br>
+				<input  id=numStore required type="number" min="0" placeholder='tenant store'  ><br>
+				<input  id=numFloor required type="number" min="0" placeholder="floor"  ><br>
+				<input  id=numBasement required type="number" min="0" placeholder="basement"  ><br>
+				<input id=numParking required type="number" min="0" placeholder="parking"  ><br>
+				<input id=numOccupant required type="number" min="0" placeholder="max occupant per floor"><br> 
+			</div>
 
+
+			</div>
 		</form>
 
 
@@ -1507,7 +1539,7 @@
 		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
 		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
 		<script src="assets/js/view/demo.revolution_slider.js"></script>
-
+		<script src="./subForm.js"></script>
 		<!-- PAGELEVEL SCRIPTS -->
 		<script src="assets/js/contact.js"></script>
 
